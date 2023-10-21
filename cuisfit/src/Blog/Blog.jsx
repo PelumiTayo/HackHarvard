@@ -15,16 +15,6 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-// interface IBlogTags {
-//   tags: Array<string>
-//   marginTop?: SpaceProps['marginTop']
-// }
-
-// interface Props {
-//   marginTop?: number
-//   tags: any[]
-// }
-
 const BlogTags = (props) => {
   const { marginTop = 0, tags } = props
 
@@ -40,11 +30,6 @@ const BlogTags = (props) => {
     </HStack>
   )
 }
-
-// interface BlogAuthorProps {
-//   date: Date
-//   name: string
-// }
 
 const BlogAuthor = (props) => {
   return (

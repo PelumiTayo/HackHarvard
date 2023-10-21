@@ -1,11 +1,15 @@
 .frame {
-  background-color: rgb(129,23,27);
+  /* background-color: rgb(129,23,27); */
+  background-image: url("/Rectangle 11.png");
+  background-size: cover; /* This will cover the entire element */
+
+  background-repeat: no-repeat;
   align-items: center;
   display: flex;
   flex-direction: row;
   /* gap: 10px; */
   justify-content: space-around;
-  width: 100vw;
+  width: 90;
   height: 100vh;
   /* position: relative; */
   /* background-color: lightblue; */
