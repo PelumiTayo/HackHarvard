@@ -1,0 +1,76 @@
+.frame {
+  background-color: rgb(129,23,27);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  /* gap: 10px; */
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  /* position: relative; */
+  /* background-color: lightblue; */
+}
+
+.landingContent1{
+  width: 60%;
+}
+.landingContent2{
+  width: 40%;
+}
+.frame .hhfood {
+  height: 494px;
+  /* left: 7px; */
+  object-fit: contain;
+  /* position: absolute; */
+  /* top: 53px; */
+  width: 110%;
+  /* background-color: brown; */
+
+}
+
+.landingContent2 h1{
+  font-size: 600%;
+ text-align: center;
+ color:white;
+}
+
+.frame .cuis-fit-2 {
+  height: 103px;
+  left: 520px;
+  /* position: absolute; */
+  top: 151px;
+  width: 50%;
+  /* background-color: grey; */
+
+}
+
+.frame .text-wrapper {
+  color: #ffffff;
+  font-family: "MuseoModerno-Regular", Helvetica;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.frame .div-wrapper {
+  background-color: #0f5043;
+  border-radius: 20px;
+  height: 63px;
+  text-align: center;
+  justify-content: center;
+}
+
+.frame .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "MuseoModerno-Regular", Helvetica;
+  font-size: 25px;
+  font-weight: 400;
+  height: fit-content;
+  padding: 10px;
+  text-align: center;
+}
