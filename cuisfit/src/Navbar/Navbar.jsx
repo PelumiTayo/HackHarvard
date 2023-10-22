@@ -91,7 +91,7 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+            href={"/signIn"}
           >
             Sign In
           </Button>
@@ -102,7 +102,7 @@ export default function WithSubnavigation() {
             fontWeight={600}
             color={"white"}
             bg={"green.400"}
-            href={"#"}
+            href={"signUp"}
             _hover={{
               bg: "pink.300",
             }}
