@@ -12,7 +12,7 @@ export default function Frame() {
         <h1>Cuisfit</h1>
       <p className="text-wrapper">Where Culture Meets Fitness, Harmony Prevails</p>
       <div className="div-wrapper">
-        <button className="text-wrapper-2">Get Started Today</button>
+        <a href="/signUp" className="text-wrapper-2">Get Started Today</a>
       </div>
     </div>
     </div>

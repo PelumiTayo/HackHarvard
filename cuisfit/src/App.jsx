@@ -5,6 +5,8 @@ import Navbar from "./Navbar/Navbar";
 import Blog from "./Blog/Blog";
 import Landing from "./Landing/Landing";
 import Tracker from "./Tracker/Tracker";
+import SignIn from "./SignIn/SignIn";
+import SignUp from "./SignIn/SignUp";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/community" element={<Blog />} />
           <Route path="/tracker" element={<Tracker />} />
+          <Route path="/signIn" element={<SignIn />}/>
+          <Route path="/signUp" element={<SignUp />}/>
         </Routes>
       </BrowserRouter>
     </>
