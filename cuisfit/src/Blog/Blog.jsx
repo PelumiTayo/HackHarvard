@@ -48,7 +48,8 @@ const BlogAuthor = (props) => {
 }
 
 const ArticleList = () => {
-  return (
+    return (
+      <>
     <Container maxW={'7xl'} p="12">
       <Heading as="h1">Stories by Chakra Templates</Heading>
       <Box
@@ -180,6 +181,7 @@ const ArticleList = () => {
         </Text>
       </VStack>
     </Container>
+    </>
   )
 }
 

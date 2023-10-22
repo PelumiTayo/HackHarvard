@@ -7,6 +7,7 @@ import {
   IconButton,
   Button,
   Stack,
+  Image,
   Collapse,
   Icon,
   Popover,
@@ -55,13 +56,23 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
+          <Button as={"a"} href="/" >
+            <Image
+              // textAlign={useBreakpointValue({ base: "center", md: "left" })}
+              src="hhfood 1.png"
+              href="/"
+              objectFit={"fill"}
+              boxSize="25px"
+              alt="Logo"
+            />
+          </Button>
+          {/* <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
             color="white"
           >
             Cuisfit
-          </Text>
+          </Text> */}
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
