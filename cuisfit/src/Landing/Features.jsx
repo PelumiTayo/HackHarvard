@@ -3,7 +3,7 @@ import "./Landing.css";
 
 export default function Frame() {
 return(
-<div className="grid-container">
+<div style={{backgroundColor: "#d04f33"}} className="grid-container">
           <div className="grid-item">
             <h3> Inclusitivity</h3>
             <p>
@@ -26,12 +26,6 @@ return(
                 Join a global community of individuals who share your passion for embracing 
                 cultural diversity in health and fitness. Together, we challenge the norms and 
                 pave the way for a more inclusive, vibrant wellness culture.
-            </p>
-          </div>
-          <div className="grid-item">
-            <h3> Connect </h3>
-            <p>
-                wrg
             </p>
           </div>
       </div>
