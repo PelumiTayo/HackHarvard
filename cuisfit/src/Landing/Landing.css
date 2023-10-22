@@ -81,3 +81,28 @@
   padding: 20px;
   text-align: center;
 }
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  padding: 10px 5% 100px; /* top left-right bottom padding*/
+}
+
+.grid-item {
+  border-radius: 10px;
+  text-align: center;
+  text-decoration-color: black;
+  padding: 5%;
+  border: 3px solid rgb(207, 232, 255);
+  transition: background-color 0.5s ease; /* transition: background-color provided by ai, minorly edited */
+}
+
+.grid-item:hover {
+  background-color: rgb(236, 246, 255); 
+}
+
+@media (min-width: 800px) {
+  .grid-container {
+      grid-template-columns: 1fr 1fr;
+  }
+}

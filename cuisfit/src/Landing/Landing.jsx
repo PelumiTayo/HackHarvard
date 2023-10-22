@@ -1,9 +1,11 @@
 import React from "react";
 // import { Rectangle } from "./Rectangle";
 import "./Landing.css";
+import Features from "./Features.jsx";
 
 export default function Frame() {
   return (
+    <>
     <div className="frame">
       <div className="landingContent">
       <img className="hhfood" alt="Hhfood" src="hhfood 1.png" />
@@ -15,6 +17,10 @@ export default function Frame() {
         <a href="/signUp" className="text-wrapper-2">Get Started Today</a>
       </div>
     </div>
-    </div>
+
+  </div>
+  <Features/>
+  </>
+    
   );
 };
