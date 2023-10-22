@@ -97,7 +97,7 @@ export default function WithSubnavigation() {
             bg={"green.400"}
             href={"signUp"}
             _hover={{
-              bg: "pink.300",
+              bg: "green.300",
             }}
           >
             Sign Up
