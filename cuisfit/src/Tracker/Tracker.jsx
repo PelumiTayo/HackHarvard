@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Box,
   Image,
@@ -8,7 +8,9 @@ import {
   IconButton,
   Input,
   VStack,
+  Tooltip,
   FormControl,
+  AspectRatio,
   FormLabel,
   InputGroup,
   InputLeftElement,
@@ -17,25 +19,20 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react";
-import {
-  MdPhone,
-  MdEmail,
-  MdLocationOn,
-  MdFacebook,
-  MdOutlineEmail,
-} from "react-icons/md";
-import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
 
 import { StarIcon } from "@chakra-ui/icons";
 
 export default function Tracker() {
-    const [mockInput, setMockInput] = useState({
-        image: "",
-        country: "",
-        dishName: "",
-        serving: "",
-        date: ""
-    })
+  const [mockInput, setMockInput] = useState({
+    image: "",
+    country: "",
+    dishName: "",
+    serving: "",
+    date: "",
+  });
+  const [subError, setSubError] = useState("");
+
+  console.log(subError);
   const property = {
     imageUrl: "https://bit.ly/2Z4KKcF",
     imageAlt: "Rear view of modern home with pool",
@@ -57,83 +54,153 @@ export default function Tracker() {
           marginTop={"50px"}
           alignItems={"center"}
           rounded={"2xl"}
-          boxShadow={"2xl"}
           width={"full"}
           overflow={"hidden"}
         >
-          <Text
-            position={"absolute"}
-            left={"50%"}
-            top={"50%"}
-            transform={"translateX(-50%) translateY(-50%)"}
-            fontSize="2xl"
-            color={"black"}
-            fontWeight={"extrabold"}
-          >
-            Global Flavors, Personal Goals - Track Your Culinary Journey!
-          </Text>
           <Image
             alt={"Hero Image"}
             fit={"cover"}
             w={"100%"}
             h={"100%"}
-            src={
-              "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
-            }
+            objectFit={"contain"}
+            src={"cultureatfood 1.png"}
           />
         </Box>
       </Box>
       <Box color={"black"} textAlign={"center"} w={"50%"}>
+        <Text
+          color="#7E0000"
+          transform={"translateX(-50%) translateY(-50%)"}
+          fontSize="2xl"
+          fontWeight={"extrabold"}
+        >
+          Global Flavors, Personal Goals - Track Your Culinary Journey!
+        </Text>
+        <Image
+          src="cultureat 1.png"
+          position={"absolute"}
+          boxSize="150px"
+          left={"1300px"}
+          top={"60px"}
+        />
         <Button
           bgColor={"#0B7A75"}
           color={"white"}
           onClick={(e) => {
             e.preventDefault();
-            setDishButton(!dishButton);
+            if (
+              (dishButton === true &&
+                mockInput.dishName &&
+                mockInput.image &&
+                mockInput.date &&
+                mockInput.country &&
+                mockInput.serving) ||
+              dishButton == false
+            ) {
+              setDishButton(!dishButton);
+            }
+            if (dishButton == true) {
+              setSubError("Please provide an input to all fields.");
+            }
           }}
         >
           {dishButton ? "Submit" : "Add a dish!"}
         </Button>
         {dishButton ? (
           <Box bg="white" borderRadius="lg">
+            <Text color={"red"}>{subError}</Text>
             <Box m={8} color="#0B0E3F">
               <VStack spacing={5}>
                 <FormControl id="name">
                   <FormLabel>Dish Name</FormLabel>
                   <InputGroup borderColor="#E0E1E7">
-                    <InputLeftElement pointerEvents="none">
-                      {/* <BsPerson color="gray.800" /> */}
-                    </InputLeftElement>
-                    <Input type="text" size="md" />
+                    <Input
+                      onChange={(e) =>
+                        setMockInput((prevState) => ({
+                          ...prevState,
+                          dishName: e.target.value,
+                        }))
+                      }
+                      value={mockInput.dishName}
+                      type="text"
+                      size="md"
+                    />
                   </InputGroup>
                 </FormControl>
                 <FormControl id="name">
-                  <FormLabel>Serving Size (g)</FormLabel>
+                  <FormLabel>Country</FormLabel>
                   <InputGroup borderColor="#E0E1E7">
-                    <InputLeftElement pointerEvents="none">
-                      {/* <MdOutlineEmail color="gray.800" /> */}
-                    </InputLeftElement>
-                    <Input type="text" size="md" />
+                    <Input
+                      onChange={(e) =>
+                        setMockInput((prevState) => ({
+                          ...prevState,
+                          country: e.target.value,
+                        }))
+                      }
+                      value={mockInput.country}
+                      type="text"
+                      size="md"
+                    />
+                  </InputGroup>
+                </FormControl>
+                <FormControl id="name">
+                  <Tooltip
+                    label="1g = 0.00423 Cups, 1g = 0.03527oz "
+                    fontSize="md"
+                  >
+                    <FormLabel>Serving Size (g) (between 1 and 2000)</FormLabel>
+                  </Tooltip>
+                  <InputGroup borderColor="#E0E1E7">
+                    <Input
+                      onChange={(e) =>
+                        setMockInput((prevState) => ({
+                          ...prevState,
+                          serving: e.target.value,
+                        }))
+                      }
+                      value={mockInput.serving}
+                      type="number"
+                      min="1"
+                      max="2000"
+                      size="md"
+                    />
+                  </InputGroup>
+                </FormControl>
+                <FormControl id="name">
+                  <FormLabel>Image Url</FormLabel>
+                  <InputGroup borderColor="#E0E1E7">
+                    <Input
+                      onChange={(e) =>
+                        setMockInput((prevState) => ({
+                          ...prevState,
+                          image: e.target.value,
+                        }))
+                      }
+                      value={mockInput.image}
+                      type="text"
+                      size="md"
+                    />
                   </InputGroup>
                 </FormControl>
                 <FormControl id="name">
                   <FormLabel>Date</FormLabel>
-                  <Input type="datetime-local" size="md" />
-
-                  {/* <Textarea
-                         borderColor="gray.300"
-                         _hover={{
-                           borderRadius: 'gray.300',
-                         }}
-                         placeholder="message"
-                       /> */}
+                  <Input
+                    onChange={(e) =>
+                      setMockInput((prevState) => ({
+                        ...prevState,
+                        date: e.target.value,
+                      }))
+                    }
+                    value={mockInput.date}
+                    type="date"
+                    size="md"
+                  />
                 </FormControl>
               </VStack>
             </Box>
           </Box>
         ) : (
           <>
-            
             <Box display={"flex"} flexWrap={"wrap"} justifyContent={"center"}>
               <Box
                 m={"10px"}
@@ -147,7 +214,6 @@ export default function Tracker() {
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Jollof_Rice_with_Stew.jpg/1200px-Jollof_Rice_with_Stew.jpg"
                   }
                   w={"100%"}
-                  // maxW={"100%"}
                   maxH={"200px"}
                   objectFit={"contain"}
                   alt={property.imageAlt}
@@ -193,7 +259,15 @@ export default function Tracker() {
                 borderRadius="lg"
                 overflow="hidden"
               >
-                <Image src={"https://upload.wikimedia.org/wikipedia/commons/f/f9/Bolani.jpg"} alt={property.imageAlt} />
+                <Image
+                  src={
+                    "https://upload.wikimedia.org/wikipedia/commons/f/f9/Bolani.jpg"
+                  }
+                  w={"100%"}
+                  maxH={"200px"}
+                  objectFit={"contain"}
+                  alt={property.imageAlt}
+                />
 
                 <Box p="6">
                   <Box display="flex" alignItems="baseline">
@@ -221,9 +295,7 @@ export default function Tracker() {
                     Bolani
                   </Box>
 
-                  <Box>
-                    200 Calories/Serving
-                  </Box>
+                  <Box>200 Calories/Serving</Box>
 
                   <Box as="span" ml="2" fontSize="sm" fontWeight={"bold"}>
                     Added 10/20/2023
@@ -237,7 +309,15 @@ export default function Tracker() {
                 borderRadius="lg"
                 overflow="hidden"
               >
-                <Image src={"https://hot-thai-kitchen.com/wp-content/uploads/2023/04/pho-beef-blog.jpg"} alt={property.imageAlt} />
+                <Image
+                  src={
+                    "https://hot-thai-kitchen.com/wp-content/uploads/2023/04/pho-beef-blog.jpg"
+                  }
+                  w={"100%"}
+                  maxH={"200px"}
+                  objectFit={"contain"}
+                  alt={property.imageAlt}
+                />
 
                 <Box p="6">
                   <Box display="flex" alignItems="baseline">
@@ -265,9 +345,7 @@ export default function Tracker() {
                     Pho
                   </Box>
 
-                  <Box>
-                    450 Calories/Serving
-                  </Box>
+                  <Box>450 Calories/Serving</Box>
 
                   <Box as="span" ml="2" fontSize="sm" fontWeight={"bold"}>
                     Added 10/17/2023
@@ -281,7 +359,17 @@ export default function Tracker() {
                 borderRadius="lg"
                 overflow="hidden"
               >
-                <Image src={property.imageUrl} alt={property.imageAlt} />
+                <Image
+                  src={
+                    mockInput.image
+                      ? mockInput.image
+                      : "https://cdni.iconscout.com/illustration/premium/thumb/error-404-4279234-3569464.png"
+                  }
+                  alt={"Image of ethnic food"}
+                  w={"100%"}
+                  maxH={"200px"}
+                  objectFit={"contain"}
+                />
 
                 <Box p="6">
                   <Box display="flex" alignItems="baseline">
@@ -295,7 +383,7 @@ export default function Tracker() {
                       textTransform="uppercase"
                       ml="2"
                     >
-                      {property.beds} beds &bull; {property.baths} baths
+                      {mockInput.country ? mockInput.country : "unknown"}
                     </Box>
                   </Box>
 
@@ -306,28 +394,19 @@ export default function Tracker() {
                     lineHeight="tight"
                     noOfLines={1}
                   >
-                    {property.title}
+                    {mockInput.dishName ? mockInput.dishName : "Unknown"}
                   </Box>
 
                   <Box>
-                    {property.formattedPrice}
-                    <Box as="span" fontSize="sm">
-                      / wk
-                    </Box>
+                    {mockInput.serving
+                      ? `${mockInput.serving} Calories/Serving`
+                      : "0 Calories/Serving"}
                   </Box>
 
-                  <Box display="flex" mt="2" alignItems="center">
-                    {Array(5)
-                      .fill("")
-                      .map((_, i) => (
-                        <StarIcon
-                          key={i}
-                          color={i < property.rating ? "teal.500" : "gray.300"}
-                        />
-                      ))}
-                    <Box as="span" ml="2" fontSize="sm">
-                      {property.reviewCount} reviews
-                    </Box>
+                  <Box as="span" ml="2" fontSize="sm" fontWeight={"bold"}>
+                    {mockInput.date
+                      ? `Added ${mockInput.date}`
+                      : mockInput.date}
                   </Box>
                 </Box>
               </Box>
