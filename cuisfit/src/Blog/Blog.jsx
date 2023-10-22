@@ -51,7 +51,7 @@ const ArticleList = () => {
     return (
       <>
     <Container maxW={'7xl'} p="12">
-      <Heading as="h1">Stories by Chakra Templates</Heading>
+      <Heading as="h1">CulturEat Community Blog</Heading>
       <Box
         marginTop={{ base: '1', sm: '5' }}
         display="flex"
@@ -72,9 +72,9 @@ const ArticleList = () => {
               <Image
                 borderRadius="lg"
                 src={
-                  'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80'
+                  "https://hot-thai-kitchen.com/wp-content/uploads/2023/04/pho-beef-blog.jpg"
                 }
-                alt="some good alt text"
+                alt="a picture of Pho dish"
                 objectFit="contain"
               />
             </Box>
@@ -97,10 +97,10 @@ const ArticleList = () => {
           flexDirection="column"
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }}>
-          <BlogTags tags={['Engineering', 'Product']} />
+          <BlogTags tags={['Country', 'Protein', 'Grains', 'Vegetables']} />
           <Heading marginTop="1">
             <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              Blog article title
+              My Comfort Dish - Pho
             </Text>
           </Heading>
           <Text
@@ -108,12 +108,19 @@ const ArticleList = () => {
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry&apos;s standard dummy text ever since the
-            1500s, when an unknown printer took a galley of type and scrambled it to make
-            a type specimen book.
+            Pho is a beef noodle soup originate from Vietnam, a country in SouthEast Asia. 
+            The broth is beef bone based and flavored with star anise and cloves, making up its distinct aromatic taste.
+            While it is usually served with flat rice noodle and beef, Pho can also be served with other protein
+            such as chicken, shrimp, and tofu, and topped with fresh herbs, bean spoutes, and lime.
+            Regardless of the protein source, pho is typically rich in nutrients. It provides a good balance of protein, 
+            carbohydrates from the noodles, and essential vitamins and minerals from the herbs and vegetables. 
+            Pho's versatility lies in its adaptable components, allowing for various protein substitutions and adjustments to 
+            maintain its distinct flavor and nutritional value. Whether you prefer beef, chicken, seafood, or a vegetarian option, 
+            pho can be tailored to suit different tastes and dietary preferences while remaining delicious and nutritious.
+            A bowl of hot Pho is perfect for for any time, whether you're kicking off your day 
+            with a burst of energy or unwinding after a long, exhausting one. 
           </Text>
-          <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+          <BlogAuthor name="John Doe" date={new Date('2023-10-21T19:01:27Z')} />
         </Box>
       </Box>
       <Heading as="h2" marginTop="5">
@@ -140,10 +147,10 @@ const ArticleList = () => {
                 />
               </Box>
             </Box>
-            <BlogTags tags={['Engineering', 'Product']} marginTop={3} />
+            <BlogTags tags={['Region', 'Food Category',]} marginTop={3} />
             <Heading fontSize="xl" marginTop="2">
               <Text textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                Some blog title
+                Blog title
               </Text>
             </Heading>
             <Text as="p" fontSize="md" marginTop="2">
@@ -152,32 +159,26 @@ const ArticleList = () => {
               1500s, when an unknown printer took a galley of type and scrambled it to
               make a type specimen book.
             </Text>
-            <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+            <BlogAuthor name="John Doe" date={new Date('2023-10-21T19:01:27Z')} />
           </Box>
         </WrapItem>
       </Wrap>
       <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
         <Heading as="h2">What we write about</Heading>
         <Text as="p" fontSize="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum quam
-          arcu, eu tempus tortor molestie at. Vestibulum pretium condimentum dignissim.
-          Vestibulum ultrices vitae nisi sed imperdiet. Mauris quis erat consequat,
-          commodo massa quis, feugiat sapien. Suspendisse placerat vulputate posuere.
-          Curabitur neque tortor, mattis nec lacus non, placerat congue elit.
-        </Text>
-        <Text as="p" fontSize="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum quam
-          arcu, eu tempus tortor molestie at. Vestibulum pretium condimentum dignissim.
-          Vestibulum ultrices vitae nisi sed imperdiet. Mauris quis erat consequat,
-          commodo massa quis, feugiat sapien. Suspendisse placerat vulputate posuere.
-          Curabitur neque tortor, mattis nec lacus non, placerat congue elit.
-        </Text>
-        <Text as="p" fontSize="lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec condimentum quam
-          arcu, eu tempus tortor molestie at. Vestibulum pretium condimentum dignissim.
-          Vestibulum ultrices vitae nisi sed imperdiet. Mauris quis erat consequat,
-          commodo massa quis, feugiat sapien. Suspendisse placerat vulputate posuere.
-          Curabitur neque tortor, mattis nec lacus non, placerat congue elit.
+          Our community page serves as a medium for everyone to share and learn about different cusines along with its 
+          health benefits and the origin surrounding the dish. Our webapp makes it easy for writers to incorporate
+          calories and other nutrients info into their post. Our search and categorization system allows readers
+          to easily find the content their interested in and explore. Furthermore, writers can also share tips about eating 
+          and excersises that are in their culture. We hope to turn this into a comprehensive resource for 
+          promoting culinary diversity, healthy living, and cultural exchange. Here, everyone can share:
+          <ul>
+            <li>recipes of cultural dishes </li>
+            <li>origin and evolution </li>
+            <li>healthy eating tips </li>
+            <li>traditional dances, excersies and their benefits</li>
+            <li>and more...</li>
+          </ul>
         </Text>
       </VStack>
     </Container>
