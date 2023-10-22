@@ -45,7 +45,7 @@ export default function Tracker() {
   };
   const [dishButton, setDishButton] = useState(false);
   return (
-    <Box display="flex" w={"95"} minH={"100vh"} h={"fit-content"} m={"20px"}>
+    <Box display="flex" w={"95"} minH={"100vh"} h={"fit-content"} mt={"80px"}>
       <Box w={"50%"}>
         <Box
           position={"relative"}
@@ -71,17 +71,17 @@ export default function Tracker() {
         <Text
           color="#7E0000"
           transform={"translateX(-50%) translateY(-50%)"}
-          fontSize="2xl"
+          fontSize="4xl"
           fontWeight={"extrabold"}
         >
-          Global Flavors, Personal Goals - Track Your Culinary Journey!
+          Global Flavors, Personal Goals!
         </Text>
         <Image
           src="cultureat 1.png"
           position={"absolute"}
           boxSize="150px"
           left={"1300px"}
-          top={"60px"}
+          top={"85px"}
         />
         <Button
           bgColor={"#0B7A75"}
